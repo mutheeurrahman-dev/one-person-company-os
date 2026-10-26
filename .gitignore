@@ -1,0 +1,29 @@
+# Python
+venv/
+.venv/
+backend/venv/
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite
+*.sqlite3
+
+# Secrets and Environment
+.env
+*.env
+backend/.env
+frontend/.env
+*.local
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+dist/
+build/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

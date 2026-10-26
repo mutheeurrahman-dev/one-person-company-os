@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 251 250 247;
+  --surface: 255 255 255;
+  --raised: 244 242 236;
+  --border: 230 226 216;
+  --ink: 27 27 29;
+  --muted: 107 104 98;
+  --accent: 184 128 46;
+  --accent-ink: 27 18 0;
+  --success: 31 138 95;
+  --danger: 178 59 59;
+  --info: 76 95 213;
+  --manager: 76 95 213;
+  --operations: 184 128 46;
+  --finance: 31 138 95;
+  --customer: 46 130 178;
+  --marketing: 178 59 122;
+}
+
+.dark {
+  --bg: 16 17 20;
+  --surface: 23 24 28;
+  --raised: 29 31 36;
+  --border: 42 44 50;
+  --ink: 236 235 231;
+  --muted: 154 151 143;
+  --accent: 217 164 65;
+  --accent-ink: 27 18 0;
+  --success: 61 190 135;
+  --danger: 224 96 96;
+  --info: 124 140 240;
+  --manager: 124 140 240;
+  --operations: 217 164 65;
+  --finance: 61 190 135;
+  --customer: 96 170 224;
+  --marketing: 224 120 170;
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-bg text-ink font-body antialiased;
+}
+
+::selection {
+  background-color: rgb(var(--accent) / 0.25);
+}
+
+/* subtle scanline texture used behind the command console */
+.console-grid {
+  background-image:
+    linear-gradient(rgb(var(--border) / 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--border) / 0.5) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.status-dot {
+  box-shadow: 0 0 0 3px rgb(var(--dot-color) / 0.15);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.85); }
+}
+.pulse {
+  animation: pulse-dot 1.4s ease-in-out infinite;
+}
+
+@keyframes blink-caret {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.caret-blink {
+  animation: blink-caret 1s step-end infinite;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgb(var(--border)); border-radius: 4px; }
